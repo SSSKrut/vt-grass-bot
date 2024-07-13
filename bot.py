@@ -1,35 +1,25 @@
-import time
-import telebot
-from config.settings import BOT_TOKEN
-from management.commands.start import start_command
-from management.commands.flower import send_flower
+import asyncio
+import logging
+from aiogram import Bot, Dispatcher
 
-bot = telebot.TeleBot(BOT_TOKEN)
+from config import BOT_TOKEN, ADMIN_ID
+from management.commands import start_router, help_router, flower_router, license_router
 
-bot.register_message_handler(
-    lambda message: start_command(message, bot), commands=["start"]
-)
-bot.register_message_handler(
-    lambda message: send_flower(message, bot), commands=["flower"]
-)
+# from management.utils.handle_error import error_handler
 
 
-def handle_exception(e: Exception):
-    print(e)
+async def main():
+    logging.basicConfig(level=logging.INFO)
+    bot = Bot(token=BOT_TOKEN)
+    dp = Dispatcher()
+
+    dp.include_routers(start_router, help_router, flower_router, license_router)
+    # dp.errors_handlers.register(error_handler)
+    logging.info("Current admin list: %s", ADMIN_ID)
+
+    await bot.delete_webhook(drop_pending_updates=True)
+    await dp.start_polling(bot)
 
 
-bot_running = True
-
-
-@bot.message_handler(commands=["stop"])
-def stop_bot(message) -> None:
-    global bot_running
-    bot_running = False
-
-
-while bot_running:
-    try:
-        bot.polling()
-    except Exception as e:
-        handle_exception(e)
-        time.sleep(5)
+if __name__ == "__main__":
+    asyncio.run(main())
