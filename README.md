@@ -27,6 +27,9 @@ Make a `.config.yaml` file with this useful but not obligatory options:
 
 and `token: '1234:123123123'` with your bot's token from Telegram.
 
+> [!TIP]
+> If you have any difficulties creating a config file, take a look at the [finished one](./config.yaml) in the repository.
+
 ## Start bot
 
 Use a .venv to avoid trashing your packages. To create it and use:
