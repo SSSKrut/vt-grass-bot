@@ -13,10 +13,12 @@ Telegram bot for posting photos of grass, flowers and trees from internet.
 ## Feature set
 
 - [x] Make first realization
-- [ ] Posting random plant image from internet.
-- [ ] Post it at a certain interval.
-- [ ] Posting weather for some location.
-- [ ] Add docker
+- [ ] Posting random plant image from internet
+- [ ] Post it at a certain interval
+- [ ] Posting weather for some location
+- [ ] Dockerization
+- [ ] Localization via .json
+- [ ] Admin tools
 
 ## Configuration
 
