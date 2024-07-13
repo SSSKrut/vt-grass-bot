@@ -162,5 +162,5 @@ cython_debug/
 #.idea/
 
 
-# Telegram Bot Token
-.token
+# Telegram YAML configuration file
+.config.yaml
