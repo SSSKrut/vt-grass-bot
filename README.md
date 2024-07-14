@@ -31,7 +31,7 @@ Make a `.config.yaml` file with this useful but not obligatory options:
 - ```license: 'MIT license...'```
 - ...
 
-and `token: '1234:123123123'` with your bot's token from Telegram.
+and `telegram_token: '1234:123123123'` with your bot's token from Telegram.
 
 > [!TIP]
 > If you have any difficulties creating a config file, take a look at the [finished one](./config.yaml) in the repository.
