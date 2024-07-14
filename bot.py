@@ -3,7 +3,13 @@ import logging
 from aiogram import Bot, Dispatcher
 
 from config import *
-from management.commands import start_router, help_router, flower_router, license_router
+from management.commands import (
+    start_router,
+    help_router,
+    flower_router,
+    license_router,
+    landscape_router,
+)
 import management.utils
 import management.utils.search
 
@@ -15,7 +21,9 @@ async def main():
     bot = Bot(token=BOT_TOKEN)
     dp = Dispatcher()
 
-    dp.include_routers(start_router, help_router, flower_router, license_router)
+    dp.include_routers(
+        start_router, help_router, flower_router, license_router, landscape_router
+    )
     # dp.errors_handlers.register(error_handler)
     logging.info("Current admin list: %s", ADMIN_ID)
     logging.info("Current green list: %s", GREEN_LIST)
