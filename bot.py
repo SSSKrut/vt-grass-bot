@@ -2,8 +2,10 @@ import asyncio
 import logging
 from aiogram import Bot, Dispatcher
 
-from config import BOT_TOKEN, ADMIN_ID
+from config import *
 from management.commands import start_router, help_router, flower_router, license_router
+import management.utils
+import management.utils.search
 
 # from management.utils.handle_error import error_handler
 
@@ -16,6 +18,9 @@ async def main():
     dp.include_routers(start_router, help_router, flower_router, license_router)
     # dp.errors_handlers.register(error_handler)
     logging.info("Current admin list: %s", ADMIN_ID)
+    logging.info("Current green list: %s", GREEN_LIST)
+
+    # management.utils.search.random_image_unsplash(["flower"])
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)

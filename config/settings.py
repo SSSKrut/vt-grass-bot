@@ -13,7 +13,10 @@ except FileNotFoundError:
 
 
 # Read the token from the file
-BOT_TOKEN = config["token"]
+BOT_TOKEN = config["telegram_token"]
+UNSPLASH_TOKEN = config["unsplash_token"]
+
+GREEN_LIST = config["green_list"]
 
 # Assign the 'admin' field as an array to ADMIN_ID
 ADMIN_ID = config["admin"]
