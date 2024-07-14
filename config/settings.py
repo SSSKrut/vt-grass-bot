@@ -17,6 +17,10 @@ BOT_TOKEN = config["telegram_token"]
 UNSPLASH_TOKEN = config["unsplash_token"]
 
 GREEN_LIST = config["green_list"]
+GREEN_LIST_RANDOM = config["green_list_random"]
+
+LANDSCAPE_LIST = config["landscape_list"]
+LANDSCAPE_LIST_RANDOM = config["landscape_list_random"]
 
 # Assign the 'admin' field as an array to ADMIN_ID
 ADMIN_ID = config["admin"]

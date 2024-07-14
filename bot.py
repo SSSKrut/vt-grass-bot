@@ -19,6 +19,9 @@ async def main():
     # dp.errors_handlers.register(error_handler)
     logging.info("Current admin list: %s", ADMIN_ID)
     logging.info("Current green list: %s", GREEN_LIST)
+    logging.info("Current green random list: %s", GREEN_LIST_RANDOM)
+    logging.info("Current landscape list: %s", GREEN_LIST)
+    logging.info("Current landscape random list: %s", LANDSCAPE_LIST_RANDOM)
 
     # management.utils.search.random_image_unsplash(["flower"])
 

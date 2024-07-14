@@ -13,8 +13,8 @@ Telegram bot for posting photos of grass, flowers and trees from internet.
 ## Feature set
 
 - [x] Make first realization
-- [ ] Posting random plant image from internet
-    - [ ] Unsplash API
+- [x] Posting random plant image from internet
+    - [x] Unsplash API
     - [ ] Pexels API
     - [ ] Flickr API
     - [ ] Pixabay API
