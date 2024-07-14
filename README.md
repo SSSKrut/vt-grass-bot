@@ -14,7 +14,7 @@ Telegram bot for posting photos of grass, flowers and trees from internet.
 
 - [x] Make first realization
 - [x] Posting random plant image from internet
-    - [x] Unsplash API
+    - [x] Unsplash API (see [Unsplash documentation](https://unsplash.com/documentation))
     - [ ] Pexels API
     - [ ] Flickr API
     - [ ] Pixabay API
@@ -35,6 +35,7 @@ and `token: '1234:123123123'` with your bot's token from Telegram.
 
 > [!TIP]
 > If you have any difficulties creating a config file, take a look at the [finished one](./config.yaml) in the repository.
+> Remember that you need tokens for all APIs or at least one of them.
 
 ## Start bot
 
