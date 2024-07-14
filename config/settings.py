@@ -1,5 +1,6 @@
 import logging
 import yaml
+import time
 
 try:
     with open(".config.yaml", "r") as file:
@@ -25,3 +26,7 @@ LANDSCAPE_LIST_RANDOM = config["landscape_list_random"]
 # Assign the 'admin' field as an array to ADMIN_ID
 ADMIN_ID = config["admin"]
 LICENSE = config["license"]
+
+
+# Get the initialization timestamp
+BOT_INITIALIZED_TIME = int(time.time())
