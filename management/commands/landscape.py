@@ -1,4 +1,6 @@
+import logging
 import random
+from typing import Tuple
 from aiogram import Router, types
 from aiogram.filters import Command
 
@@ -25,3 +27,18 @@ async def landscape_command(message: types.Message):
         photo=image_url,
         caption="🏕⛰🏔",
     )
+
+
+async def get_landscape_url() -> Tuple[str | None, int]:
+    count = random.randint(
+        settings.LANDSCAPE_LIST_RANDOM["min"], settings.LANDSCAPE_LIST_RANDOM["max"]
+    )
+    count = min(count, len(settings.LANDSCAPE_LIST))
+    query = random.sample(settings.LANDSCAPE_LIST, count)
+
+    image_url, status = unsplash.random_image_unsplash(query)
+    if image_url is None:
+        logging.error(f"Error: get landscape url: status {status}")
+        return None, status
+
+    return image_url, status

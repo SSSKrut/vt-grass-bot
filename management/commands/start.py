@@ -17,7 +17,7 @@ async def start_command(message: types.Message):
         f"Привет! Я бот для отправки травы.\n"
         f"Группа {message.chat.title} инициализирована.\n"
         f"Я буду иногда отправлять сюда красивые картинки. "
-        f"А пока можете прописать /help и я выведу полезную информацию."
+        f"В /help есть немного полезной информации."
     )
 
     await message.answer(answer)

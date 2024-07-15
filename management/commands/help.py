@@ -16,7 +16,7 @@ async def help_command(message: types.Message):
     /statistic - выводит статистику работы бота.
     /flower - отправляет цветок.
     /license - выводит информацию о моей лицензии.
-    /get_flower - отправляет картинку цветка из открытой базы цветов.
-    /get_landscape - отправляет картинку пейзажа из открытой базы пейзажей.
+    /get_flower - отправляет картинку цветка из открытой базы картинок.
+    /get_landscape - отправляет картинку пейзажа.
     """
     await message.answer(help_string)

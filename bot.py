@@ -35,7 +35,7 @@ async def main():
     logging.info("Current landscape random list: %s", LANDSCAPE_LIST_RANDOM)
     logging.info("Current authorized groups: %s", AUTHORIZED_GROUPS)
 
-    asyncio.create_task(scheduled(1, bot))
+    asyncio.create_task(scheduled(5, bot))
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
