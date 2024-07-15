@@ -42,6 +42,7 @@ and `telegram_token: '1234:123123123'` with your bot's token from Telegram.
 Use a .venv to avoid trashing your packages. To create it and use:
 
 ```$ poetry install```
+
 ```$ source .venv/bin/activate``` or ```$ poetry shell```
 
 After that you can start your bot's init:
