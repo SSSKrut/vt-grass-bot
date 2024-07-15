@@ -23,6 +23,9 @@ GREEN_LIST_RANDOM = config["green_list_random"]
 LANDSCAPE_LIST = config["landscape_list"]
 LANDSCAPE_LIST_RANDOM = config["landscape_list_random"]
 
+AUTHORIZED_GROUPS = set()
+RANDOM_INTERVAL = config["random_interval"]
+
 # Assign the 'admin' field as an array to ADMIN_ID
 ADMIN_ID = config["admin"]
 LICENSE = config["license"]

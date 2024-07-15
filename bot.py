@@ -3,6 +3,7 @@ import logging
 from aiogram import Bot, Dispatcher
 
 from config import *
+from management.utils import scheduled
 from management.commands import (
     start_router,
     help_router,
@@ -11,10 +12,6 @@ from management.commands import (
     landscape_router,
     statistic_router,
 )
-import management.utils
-import management.utils.search
-
-# from management.utils.handle_error import error_handler
 
 
 async def main():
@@ -30,13 +27,15 @@ async def main():
         landscape_router,
         statistic_router,
     )
-    # dp.errors_handlers.register(error_handler)
+
     logging.info("Current admin list: %s", ADMIN_ID)
     logging.info("Current green list: %s", GREEN_LIST)
     logging.info("Current green random list: %s", GREEN_LIST_RANDOM)
     logging.info("Current landscape list: %s", GREEN_LIST)
     logging.info("Current landscape random list: %s", LANDSCAPE_LIST_RANDOM)
+    logging.info("Current authorized groups: %s", AUTHORIZED_GROUPS)
 
+    asyncio.create_task(scheduled(1, bot))
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)

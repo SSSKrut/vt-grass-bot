@@ -1,2 +1,2 @@
-from .user_check import get_user_from_message
+from .scheduling import *
 from .handle_error import exception_handler
