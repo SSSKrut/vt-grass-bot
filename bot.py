@@ -34,6 +34,7 @@ async def main():
     logging.info("Current landscape list: %s", GREEN_LIST)
     logging.info("Current landscape random list: %s", LANDSCAPE_LIST_RANDOM)
     logging.info("Current authorized groups: %s", AUTHORIZED_GROUPS)
+    logging.info("Current random interval: %s", RANDOM_INTERVAL)
 
     asyncio.create_task(scheduled(5, bot))
 
