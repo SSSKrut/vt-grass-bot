@@ -85,6 +85,7 @@ def how_much_wait_seconds(timestamp_unix: int) -> int:
         return 0
 
 
+@exception_handler
 async def day_schedule(wait_for: int, bot: Bot):
     post_time = []
     photos_sended_today = 0
@@ -98,18 +99,17 @@ async def day_schedule(wait_for: int, bot: Bot):
         post_time = get_random_post_time(photos_to_send)
 
     logging.info(
-        "\n".join(
+        "Waiting to send photo(s) at "
+        + ", ".join(
             [
-                f"Waiting to send photo at {time.ctime(timestamp)}"
+                time.strftime("%H:%M:%S", time.localtime(timestamp))
                 for timestamp in post_time
             ]
         )
     )
-    metka = True
-    print(metka)
+
     while today == datetime.now().day:
         await asyncio.sleep(wait_for)
-        metka = today == datetime.now().day
 
         if not is_interval_time():
             continue

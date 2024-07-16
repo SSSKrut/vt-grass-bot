@@ -21,3 +21,18 @@ async def start_command(message: types.Message):
     )
 
     await message.answer(answer)
+
+
+@router.message(Command("stop"))
+async def stop_command(message: types.Message):
+    group = ["group", "supergroup"]
+    if message.chat.type not in group:
+        await message.answer(f"Пока!.")
+        return
+    try:
+        settings.AUTHORIZED_GROUPS.remove(message.chat.id)
+    except KeyError:
+        None
+    answer = "Группа деактивирована. Пока!"
+
+    await message.answer(answer)

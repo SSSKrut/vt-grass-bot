@@ -3,7 +3,7 @@ import yaml
 import time
 
 try:
-    with open(".config.yaml", "r") as file:
+    with open(".config.yml", "r") as file:
         try:
             config = yaml.safe_load(file)
         except yaml.YAMLError as exc:
