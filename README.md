@@ -26,7 +26,7 @@ Telegram bot for posting photos of grass, flowers and trees from internet.
 
 ## Configuration
 
-Make a `.config.yaml` file with this useful but not obligatory options:
+Make a `.config.yml` file with this useful but not obligatory options:
 - ```admins: [<admin_id>, <another_admin_id>]```
 - ```license: 'MIT license...'```
 - ...
@@ -48,3 +48,14 @@ Use a .venv to avoid trashing your packages. To create it and use:
 After that you can start your bot's init:
 
 ```$ python bot.py```
+
+
+## Start bot in Docker container
+
+You can do it in easy way:
+
+```$ docker buildx build .```
+
+```$ docker run --detached <image-name>```
+
+or, if you prefer full customization check [Docker documentation](https://docs.docker.com/manuals/).

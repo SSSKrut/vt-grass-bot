@@ -164,3 +164,4 @@ cython_debug/
 
 # Telegram YAML configuration file
 .config.yml
+.config.yaml
