@@ -19,8 +19,8 @@ Telegram bot for posting photos of grass, flowers and trees from internet.
     - [ ] Flickr API
     - [ ] Pixabay API
 - [x] Post it at a certain interval
+- [x] Dockerization
 - [ ] Posting weather for some location
-- [ ] Dockerization
 - [ ] Localization via .json
 - [ ] Admin tools
 
